@@ -18,13 +18,13 @@
 					<li ${request.actionMethod == 'index' ? 'class=active' : ''}><a href="@{Application.index()}">Home</a></li>
 					#{if nextEventId}<li ${request.actionMethod == 'event' ? 'class=active' : ''}><a href="@{Application.event(nextEventId)}">Events</a></li>#{/if}
 <!--					<li><a href="#">Publications</a></li>-->
-					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">About us</a></li>
+					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">A propos</a></li>
 					<li ${request.actionMethod == 'members' ? 'class=active' : ''}><a href="@{Application.members()}">&{'navigation.members'}</a></li>
 				</ul>
 			</nav>
 			#{doLayout /}
 			<section id="partners">
-				<h2>Partners</h2>
+				<h2>Partenaires</h2>
 				<div class="partners-register">
 					<h3>Devenir sponsor?</h3>
 					<p>Venez nous rencontrer lors d'un évènement ou envoyez nous un email.</p>
@@ -38,20 +38,21 @@
 		<footer>
 			<h2>Montpellier JUG, partages et discussions sur Java en Languedoc-Roussillon.</h2>
 			<div>
-				<h3>About us</h3>
+				<h2>A propos?</h2>
 				<p>Nous sommes une association loi 1901, créée pour partager nos expériences des TIC, et promouvoir les technologies autour de Java en Languedoc-Roussillon.</p>
 				<p>L'objectif premier est de réunir les acteurs montpellierains (sociétés, écoles, étudiants), à travers notamment l'organisation de soirées thématiques, gratuites et ouvertes à tous.</p>
 				<p>Une autre finalité est la mise en relation de ces acteurs, par d'autres moyens que les forums et groupes virtuels.</p>
 				<p><a id="contact" href="@{Application.about()}">En savoir plus...</a></p>
 			</div>
 			<div>
-				<h3>Get involved</h3>
+				<h2>Participez!</h2>
 				<p>Chaque participant est encouragé à promouvoir les évènements via des gazoullis, courriels ou tout autre moyen de communication.</p>
 				<p>Les thématiques sont ouvertes à proposition, si vous souhaitez que le JUG intervienne sur un sujet en particulier, faites-le nous savoir en envoyant un courriel.</p>
 				<p>Enfin, si vous avez une expérience sur un sujet spécifique, et que vous souhaitez la partager, nous sommes en perpétuelle recherche de nouveaux speakers.</p>
 				<p><a id="contact" href="mailto:info@jug-montpellier.org">info@jug-montpellier.org</a></p>
 			</div>
 			<div>
+				<h2>Ailleurs...</h2>
 				<p><a id="contact" href="http://github.com/Jug-Montpellier" target="_blank">Github</a></p>
 				<p><a id="contact" href="http://twitter.com/montpellierjug" target="_blank">Twitter</a></p>
 			</div>
