@@ -1,13 +1,22 @@
 package models;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 
+import controllers.Application;
+
+import play.Play;
 import play.data.validation.MaxSize;
 import play.db.jpa.Model;
+import play.libs.Crypto;
+import play.libs.Images;
+import play.mvc.Router;
+import utils.MD5;
 
 @Entity
 public class Speaker extends Model {
@@ -21,6 +30,8 @@ public class Speaker extends Model {
     public String url;
 
     public String personalUrl;
+    
+    public String email;
 
     @Lob
     @MaxSize(5000)
@@ -40,6 +51,21 @@ public class Speaker extends Model {
         return Talk.find(
                 "select talk.event from Talk talk where talk.speaker.id=?",
                 speakerId).fetch();
+    }
+    
+    public String getGravatar() {
+		String defaultLogo = "";
+		try {
+			// FIXME : Is there another way to get the logo.png URL?
+			defaultLogo = URLEncoder.encode(Router.getFullUrl("Application.index") + "public/images/logo.png", "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+		}
+
+    	if (email != null) {
+    		return "http://www.gravatar.com/avatar/" + MD5.md5Hex(email.toLowerCase()) + "?s=110&d=" + defaultLogo;
+    	} else {
+    		return "http://www.gravatar.com/avatar/00000000000000000000000000000000?s=110&d=" + defaultLogo;
+    	}
     }
 
     @Override

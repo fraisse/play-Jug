@@ -59,7 +59,7 @@ public class Application extends Controller {
             render(member, memberEvent);
         }
     }
-
+    
     public static void downloadEventAttachment(Long eventId, String attachment) {
         File file = Event.getAttachment(eventId, attachment);
         if (file != null && file.exists()) {

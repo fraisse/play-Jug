@@ -21,7 +21,7 @@
 			#{if (member.photoUrl)}
 				<img alt="${member.fullName}" src="${member.photoUrl}">
 			#{/if}#{else}
-				<img alt="${member.fullName}" src="@{'/public/images/logo.png'}">
+				<img alt="${member.fullName}" src="${member.getGravatar()}">
 			#{/else}
 			</div>
 			<div>
