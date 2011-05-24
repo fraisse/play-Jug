@@ -25,10 +25,23 @@
 			#{/else}
 			</div>
 			<div>
-			<h3>${member.fullName}#{if (member.memberFct)} &nbsp; <span class="member-fonction">(${member.memberFct})</span>#{/if}</h3>
-			<span>${member.company}</span><br />
-			${member.activity.nl2br()}<br /> 
-			${member.description.nl2br()}
+			<h3>
+			#{if (member.personalUrl)}
+				<a href="${member.personalUrl}" target="_blank">${member.fullName}</a>
+			#{/if}
+			#{else}
+				${member.fullName}
+			#{/else}
+			#{if (member.memberFct)} &nbsp; <span class="member-fonction">(${member.memberFct})</span>#{/if}</h3>
+			#{if (member.url)}
+				<span><a href="${member.url}" target="_blank">${member.company}</a></span><br />
+			#{/if}#{else}
+				<span>${member.company}</span><br />
+			#{/else}
+			${member.activity.nl2br()}<br />
+			#{if (member.description)}
+				${member.description.nl2br()}
+			#{/if}
 			</div>
 		</article>
 </section>

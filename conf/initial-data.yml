@@ -60,6 +60,15 @@
    activity: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.
    company: Titi
    url: nop
+   
+ Speaker(speak4):
+       fullName: Christophe Hamerling
+       activity: Ingénieur R&D SOA
+       company: PetalsLink
+       url: http://petalslink.com
+       personalUrl: http://chamerling.org
+       jugmember: true
+       memberFct: Vice-Secrétaire
 
  Talk(talk1):
    title: Introduction

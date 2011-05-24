@@ -17,8 +17,10 @@ public class Speaker extends Model {
     public String activity;
 
     public String company;
-
+    
     public String url;
+
+    public String personalUrl;
 
     @Lob
     @MaxSize(5000)
