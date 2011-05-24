@@ -1,0 +1,18 @@
+<members>
+	#{list members, as:'member'}
+	<member>
+		<fullname>${member.fullName}</fullname>
+		<activity>${member.activity?.escapeXml()}</activity>
+		<company>${member.company}</company>
+		<url>${member.url}</url>
+		<personalUrl>${member.personalUrl}</personalUrl>
+		<description>${member.description?.escapeXml()}</description>
+		#{if (member.photoUrl)}
+		<photoUrl>${member.photoUrl}</photoUrl>
+		#{/if}
+		#{else}
+		<photoUrl>${member.getGravatar().escapeXml()}</photoUrl>
+		#{/else}
+	</member>
+	#{/list}
+</members>

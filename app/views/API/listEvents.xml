@@ -1,0 +1,9 @@
+<events>
+	#{list events, as:'event'}
+	<event>
+		<title>${event.title}</title>
+		<date>${event.date}</date>
+		<description>${event.description}</description>
+	</event>
+	#{/list}
+</events>
