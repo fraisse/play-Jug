@@ -5,6 +5,7 @@ import javax.persistence.ManyToOne;
 
 import play.data.validation.MaxSize;
 import play.db.jpa.Model;
+import utils.JsonExclude;
 
 @Entity
 public class Talk extends Model {
@@ -24,6 +25,7 @@ public class Talk extends Model {
     @MaxSize(1000)
     public String teaser;
 
+    @JsonExclude
     @ManyToOne
     public Event event;
 

@@ -8,6 +8,7 @@ import java.util.List;
 import models.Event;
 import models.Speaker;
 import play.mvc.Controller;
+import utils.RenderJsonExclusion;
 
 /**
  * A dedicated controller for all the API related stuff
@@ -20,7 +21,7 @@ public class API extends Controller {
     public static void listEvents() {
     	List<Event> events = Event.allByDate();
     	if (request.format.equals("json")) {
-    		renderJSON(events);
+    		renderJSONExclusion(events);
     	}
     	render(events);
     }
@@ -31,5 +32,9 @@ public class API extends Controller {
     		renderJSON(members);
     	}
     	render(members);
+    }
+    
+    private static void renderJSONExclusion(Object o) {
+    	throw new RenderJsonExclusion(o);
     }
 }
