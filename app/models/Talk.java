@@ -1,6 +1,10 @@
 package models;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import play.data.validation.MaxSize;
@@ -20,8 +24,9 @@ public class Talk extends Model {
     @ManyToOne
     public Speaker speaker;
 
-    public String tags;
-
+    @ManyToMany(cascade=CascadeType.PERSIST)
+    public Set<Tag> tags;
+    
     @MaxSize(1000)
     public String teaser;
 

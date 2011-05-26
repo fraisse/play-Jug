@@ -34,7 +34,15 @@
 		<h2>Programme</h2>
 		#{list event.talks(), as : "talk"}
 			<h3>${talk.time} : ${talk.title}</h3>
-			</p>présenté par <span class="speaker">${talk.speaker.fullName}</span></p>
+			<p>Tags:
+			#{if talk.getTags()}
+			#{list talk.getTags(), as : "tag"}
+			<a href="@{Application.listTagged(tag.name)}">${tag.name}</a>${tag_isLast ?'':', ' }
+			#{/list}
+			#{/if}
+			#{else}-#{/else}
+			</p>
+			<p>présenté par <span class="speaker">${talk.speaker.fullName}</span></p>
 			<p>${talk.teaser}</p>
 		#{/list}
 

@@ -68,4 +68,14 @@ public class Application extends Controller {
             notFound();
         }
     }
+    
+    /**
+     * List all the talks tagged with the given tag name
+     * 
+     * @param tag
+     */
+    public static void listTagged(String tag) {
+    	// TODO
+    	index();
+    }
 }

@@ -70,6 +70,18 @@
        jugmember: true
        memberFct: Vice-Secrétaire
        email: chamerling.ebmws@gmail.com
+       
+ Tag(tag1):
+    name: gwt
+
+ Tag(tag2):
+    name: maven
+
+ Tag(tag3):
+    name: build
+
+ Tag(tag4):
+    name: git
 
  Talk(talk1):
    title: Introduction
@@ -91,3 +103,13 @@
    speaker: speak1
    teaser: Introduction de la soirée
    event: e2
+   
+ Talk(talk4):
+     title: Maven3
+     time: "19:30"
+     speaker: speak3
+     teaser: Maven3 vs Maven2... so what?
+     event: e2
+     tags:
+         - tag2
+         - tag3
