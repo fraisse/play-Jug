@@ -45,7 +45,9 @@
 		#{/if}
 		<h2>After</h2>
 		<p>A la fin de la soirée, une troisième mi-temps sera proposée dans un bar pour continuer à échanger et sympathiser </p>
-		
+		<p>
+		#{include 'Social/_twitterbutton.html' /}
+		</p>
 		<div class="attachments">
 			#{list attachments, as : "attachment"}
 				<a href="@{Application.downloadEventAttachment(event.id, attachment)}">${attachment}</a> 
