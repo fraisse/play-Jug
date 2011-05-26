@@ -20,6 +20,7 @@ GET     /remove/{eventId}/{filename}            Admin.rmEventAttachment
 # API stuff
 GET		/api/events.{<json|xml>format}			API.listEvents
 GET		/api/members.{<json|xml>format}			API.listMembers
+GET		/api/nextevent.{<json|xml>format}		API.nextEvent
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

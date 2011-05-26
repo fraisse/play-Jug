@@ -34,6 +34,14 @@ public class API extends Controller {
     	render(members);
     }
     
+    public static void nextEvent() {
+    	Event event = Event.next();
+    	if (request.format.equals("json")) {
+    		renderJSONExclusion(event);
+    	}
+    	render(event);
+    }
+    
     private static void renderJSONExclusion(Object o) {
     	throw new RenderJsonExclusion(o);
     }

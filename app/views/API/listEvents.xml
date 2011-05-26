@@ -1,10 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <events>
 	#{list events, as:'event'}
-	<event>
-		<title>${event.title}</title>
-		<date>${event.date}</date>
-		<description>${event.description}</description>
-	</event>
+	#{include 'API/event.xml' /}
 	#{/list}
 </events>
