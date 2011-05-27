@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
 		<link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+		<link rel="alternate" type="application/rss+xml" title="JUG News RSS" href="@@{Application.newsFeed()}" />
 		#{get 'moreScripts' /}
 		#{get 'moreStyles' /}
 
@@ -16,6 +17,7 @@
 			<nav id="menu">
 				<ul>
 					<li ${request.actionMethod == 'index' ? 'class=active' : ''}><a href="@{Application.index()}">Home</a></li>
+					<li ${request.actionMethod.startsWith('news') ? 'class=active' : ''}><a href="@{Application.news()}">News</a></li>
 					#{if nextEventId}<li ${request.actionMethod == 'event' ? 'class=active' : ''}><a href="@{Application.event(nextEventId)}">Events</a></li>#{/if}
 <!--					<li><a href="#">Publications</a></li>-->
 					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">A propos</a></li>

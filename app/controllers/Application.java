@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import models.Event;
+import models.News;
 import models.Speaker;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -78,4 +79,34 @@ public class Application extends Controller {
     	// TODO
     	index();
     }
+
+    /* News Section */
+    
+    public static void news() {
+    	List<News> news = News.allByDate();
+        if (renderArgs.get("nextEventId") != null) {
+            Event event = Event.findById(renderArgs.get("nextEventId"));
+            render(news, event);
+        } else {
+            render(news);
+        }
+    }
+    
+	public static void newsDetail(Long id) {
+		News news = News.findById(id);
+		if (renderArgs.get("nextEventId") != null) {
+			Event event = Event.findById(renderArgs.get("nextEventId"));
+			render(news, event);
+		} else {
+			render(news);
+		}
+	}
+    
+    public static void newsFeed() {
+    	request.format = "rss";
+    	List<News> news = News.allByDate();
+    	response.setContentTypeIfNotSet("application/rss+xml");
+    	render(news);
+    }
+    
 }

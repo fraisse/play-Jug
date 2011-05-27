@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'News Detail' /}
+
+#{if event}
+	#{include 'Application/_eventHeader.html' /}
+#{/if}
+<section id="members">
+	<h2>News Details</h2>
+		<article>
+			<div>
+			<h3><a href="@{Application.newsDetail(news.id)}">${news.title}</a>&nbsp; <span class="member-fonction">(${news.date.format('dd MMMM yyyy', 'fr')})</span></h3>
+			<p>
+			${news.content.nl2br()}
+			</p>
+			<p>
+			<br><br>
+			#{include 'Social/_twitterbutton.html' /}
+			</p>
+			</div>
+		</article>
+</section>
+

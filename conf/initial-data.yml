@@ -113,3 +113,14 @@
      tags:
          - tag2
          - tag3
+         
+ News(news1):
+     title: Next event annoucement
+     date: 2010-03-01
+     content: The next event is announced and will take place next monday. Subject is Maven vs Ivy.
+
+ News(news2):
+          title: Website Update
+          date: 2010-03-02
+          content: The Website has just been updated!
+         

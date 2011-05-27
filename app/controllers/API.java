@@ -6,6 +6,7 @@ package controllers;
 import java.util.List;
 
 import models.Event;
+import models.News;
 import models.Speaker;
 import play.mvc.Controller;
 import utils.RenderJsonExclusion;
@@ -40,6 +41,14 @@ public class API extends Controller {
     		renderJSONExclusion(event);
     	}
     	render(event);
+    }
+    
+    public static void listNews() {
+    	List<News> news = News.allByDate();
+    	if (request.format.equals("json")) {
+    		renderJSON(news);
+    	}
+    	render(news);
     }
     
     private static void renderJSONExclusion(Object o) {

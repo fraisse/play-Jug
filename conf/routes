@@ -17,11 +17,15 @@ GET     /validcode/{code}                       Inscription.validCode
 GET     /captcha                                Inscription.captcha
 GET     /remove/{eventId}/{filename}            Admin.rmEventAttachment
 GET		/tags/{tag}								Application.listTagged
+GET		/news									Application.news
+GET		/news.rss								Application.newsFeed
+GET		/news/{id}								Application.newsDetail
 
 # API stuff
 GET		/api/events.{<json|xml>format}			API.listEvents
 GET		/api/members.{<json|xml>format}			API.listMembers
 GET		/api/nextevent.{<json|xml>format}		API.nextEvent
+GET		/api/news.{<json|xml>format}			API.listNews
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
