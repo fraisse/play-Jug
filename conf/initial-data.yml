@@ -1,23 +1,46 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("initial-data.yml")
 
+ EventPartner(ep1):
+     name: epartner1
+     url: http://epartner1.com
+     description: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+         
+ EventPartner(ep2):
+    name: epartner2
+    url: http://eepartner.com
+    description: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+     
  Event(e0):
    title: Event Zero
    description: Event Zero default description
    date: 2011-01-01
-
+   report: This is an event report, blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah et blahblahblah
+   partner: ep1
+       
  Event(e1):
    title: Event One
    description: Event One default description
    date: 2011-03-13
    map: <iframe width="562" height="314" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=epitech+montpellier&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,93.076172&amp;ie=UTF8&amp;hq=epitech&amp;hnear=Montpellier,+H%C3%A9rault,+Languedoc-Roussillon,+France&amp;layer=c&amp;cbll=43.607942,3.873695&amp;panoid=rJy6Bagc9LzKrYWFRM1RLQ&amp;cbp=13,165.29,,0,23.03&amp;cid=8391966111556646024&amp;ll=43.599989,3.876886&amp;spn=0.019517,0.048237&amp;z=14&amp;iwloc=A&amp;output=svembed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=epitech+montpellier&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,93.076172&amp;ie=UTF8&amp;hq=epitech&amp;hnear=Montpellier,+H%C3%A9rault,+Languedoc-Roussillon,+France&amp;layer=c&amp;cbll=43.607942,3.873695&amp;panoid=rJy6Bagc9LzKrYWFRM1RLQ&amp;cbp=13,165.29,,0,23.03&amp;cid=8391966111556646024&amp;ll=43.599989,3.876886&amp;spn=0.019517,0.048237&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Agrandir le plan</a></small>
    open: true
+   partner: ep1
 
  Event(e2):
    title: Event Two
-   description: Event One default description
-   date: 3000-01-01
+   description: Event Two default description
+   date: 2012-01-01
+   
+ Event(e3):
+   title: Event Three
+   description: Event Three default description
+   date: 2013-01-01
 
+ Event(e4):
+     title: Event Four
+     description: Event Four default description
+     date: 2014-01-01
+     
  User(u1):
    email: arnaud.castelltort@gmail.com
 
@@ -123,4 +146,31 @@
           title: Website Update
           date: 2010-03-02
           content: The Website has just been updated!
+ 
+ News(news3):
+      title: Long news
+      date: 2010-03-03
+      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor mi, vestibulum eu volutpat et, placerat ac leo. Quisque felis quam, dignissim a commodo non, vehicula aliquam erat. Donec convallis fermentum mauris, sit amet fringilla lacus vehicula egestas. Cum sociis natoque penatibus et amet.
          
+ YearPartner(yp1):
+     name: PlayApps
+     startDate: 2011-03-01
+     stopDate: 2012-03-01
+     url: http://playapps.net
+     description: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+
+ YearPartner(yp2):
+      name: Epitech
+      startDate: 2011-04-01
+      stopDate: 2012-04-01
+      url: http://www.epitech.eu/ecole-informatique-montpellier-languedoc-roussillon/
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere accumsan erat, vitae malesuada tortor fermentum eu. Morbi eu orci nunc, in sagittis urna. Aliquam erat volutpat. Sed gravida metus.
+
+ YearPartner(yp3):
+      name: ypartner3
+      startDate: 2009-04-01
+      stopDate: 2010-04-01
+      url: http://partner3.com
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla lobortis ligula nec commodo. Phasellus vel sapien odio. Aliquam bibendum, ante consectetur luctus ornare, nulla libero scelerisque lacus, venenatis luctus elit orci vel mauris. Nullam sit amet sapien mauris. Suspendisse nullam.
+ 
+     

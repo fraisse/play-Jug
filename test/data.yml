@@ -34,6 +34,21 @@
    event: e1
    user: u3
    
+ YearPartner(yp1):
+     name: partner1
+     startDate: 2011-03-01
+     stopDate: 2012-03-01
+
+ YearPartner(yp2):
+     name: partner2
+     startDate: 2011-04-01
+     stopDate: 2012-04-01
+     
+ YearPartner(yp3):
+     name: partner3
+     startDate: 2009-04-01
+     stopDate: 2010-04-01
+   
 # User(bob):
 #   email: bob@gmail.com
 #   password: secret

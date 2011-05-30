@@ -10,7 +10,9 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import play.Play;
 import play.data.validation.MaxSize;
@@ -45,6 +47,9 @@ public class Event extends Model {
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
     public List<Talk> talks;
+    
+    @ManyToOne
+    public EventPartner partner;
 
     public static Event next() {
         return Event.find("date > ? order by date", new Date()).first();

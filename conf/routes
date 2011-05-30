@@ -20,6 +20,10 @@ GET		/tags/{tag}								Application.listTagged
 GET		/news									Application.news
 GET		/news.rss								Application.newsFeed
 GET		/news/{id}								Application.newsDetail
+GET		/partners								Application.partners
+GET		/partners/oldies						Application.oldPartners
+GET		/partner/{id}							Application.partner
+GET		/eventpartner/{id}						Application.eventPartner
 
 # API stuff
 GET		/api/events.{<json|xml>format}			API.listEvents

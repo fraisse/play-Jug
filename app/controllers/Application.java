@@ -4,8 +4,10 @@ import java.io.File;
 import java.util.List;
 
 import models.Event;
+import models.EventPartner;
 import models.News;
 import models.Speaker;
+import models.YearPartner;
 import play.mvc.Controller;
 import play.mvc.With;
 import play.mvc.results.NotFound;
@@ -108,5 +110,27 @@ public class Application extends Controller {
     	response.setContentTypeIfNotSet("application/rss+xml");
     	render(news);
     }
+    
+    public static void partners() {
+    	List<YearPartner> partners = YearPartner.getCurrent();
+    	List<EventPartner> eventPartners = EventPartner.all().fetch();
+    	render(partners, eventPartners);
+    }
+    
+    public static void partner(Long id) {
+    	YearPartner partner = YearPartner.findById(id);
+    	render(partner);
+    }
+    
+    public static void oldPartners() {
+    	List<YearPartner> partners = YearPartner.getOldies();
+    	render(partners);
+    }
+    
+    public static void eventPartner(Long id) {
+    	EventPartner partner = EventPartner.findById(id);
+    	render(partner);
+    }
+    
     
 }

@@ -458,6 +458,13 @@ article h3 {
 	padding: 10px;
 }
 
+#partners a {
+	color: #fff;
+}
+#partners a:hover {
+	color: #fff;
+}
+
 /*  -------------------------------- FOOTER */
 footer {
 	width: 900px;
