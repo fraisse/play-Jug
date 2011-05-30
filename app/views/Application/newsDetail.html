@@ -4,19 +4,37 @@
 #{if event}
 	#{include 'Application/_eventHeader.html' /}
 #{/if}
-<section id="members">
-	<h2>News Details</h2>
-		<article>
-			<div>
-			<h3><a href="@{Application.newsDetail(news.id)}">${news.title}</a>&nbsp; <span class="member-fonction">(${news.date.format('dd MMMM yyyy', 'fr')})</span></h3>
-			<p>
-			${news.content.nl2br()}
-			</p>
-			<p>
-			<br><br>
-			#{include 'Social/_twitterbutton.html' /}
-			</p>
-			</div>
-		</article>
+<section id="main">
+	<nav>
+		<h2>Nouvelles récentes</h2>
+		<ul>
+			#{list news.last(5), as : "n"}
+			<li>
+				<a href="@{Application.newsDetail(n.id)}">#{if n.id == news.id}+&nbsp;#{/if}${n.title}</a>
+				<span class="date">${n.date.format('dd MMMM yyyy', 'fr')}</span>
+			</li>
+			#{/list}
+		</ul>
+		<h2>Archives</h2>
+		<ul>
+			<li>
+				<a href="@{Application.news}">Toutes</a>
+			</li>
+		</ul>
+	</nav>
+	<article>
+		<div>
+		<h2>${news.title}</h2>
+		<span class="news-date">Montpellier, le ${news.date.format('dd MMMM yyyy', 'fr')},</span>
+		<p>&nbsp;</p>
+		<p>
+		${news.content.nl2br()}
+		</p>
+		<p>
+		<br><br>
+		#{include 'Social/_twitterbutton.html' /}
+		</p>
+		</div>
+	</article>
 </section>
 

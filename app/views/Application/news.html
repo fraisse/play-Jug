@@ -9,9 +9,10 @@
 	#{list news, as : "n"}
 		<article>
 			<div>
-			<h3><a href="@{Application.newsDetail(n.id)}">${n.title}</a>&nbsp; <span class="member-fonction">(${n.date.format('dd MMMM yyyy', 'fr')})</span></h3>
+			<h2><a href="@{Application.newsDetail(n.id)}">${n.title}</a></h2>
+			<span class="news-posted">posté le ${n.date.format('dd MMMM yyyy', 'fr')}</span>
 			<p>
-			${n.content.nl2br()}
+			${n.getShortContent(100).nl2br()}#{if n.getShortContent(100).length() >= 100}&nbsp;<a href="@{Application.newsDetail(n.id)}">...</a>#{/if}
 			</p>
 			</div>
 		</article>

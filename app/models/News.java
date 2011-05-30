@@ -30,8 +30,40 @@ public class News extends Model {
     @Column(length=10000)
 	public String content;
 	
+	/**
+	 * get all news ordered by date
+	 * 
+	 * @return
+	 */
     public static List<News> allByDate() {
     	return News.find("order by date desc").fetch();
+    }
+    
+    public static List<News> last(int size) {
+    	return News.find("order by date desc").fetch(size);
+    }
+    
+    /**
+     * Get all the news which are older than the given one
+     * 
+     * @return
+     */
+    public static List<News> past(News n) {
+    	return News.find("date < ? order by date desc", n.date).fetch();
+    }
+    
+    public String getShortContent(int length) {
+    	String result = null;
+    	if (content == null) {
+    		return "";
+    	}
+    	
+    	if (content.length() >= length) {
+    		result = content.substring(0, length);
+    	} else {
+    		result = content;
+    	}
+    	return result;
     }
 
 }
