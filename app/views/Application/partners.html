@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Partner' /}
+
+#{if event}
+	#{include 'Application/_eventHeader.html' /}
+#{/if}
+
+<section id="members">
+	<h2>Partenaires Annuels</h2>
+	#{list partners, as : "p"}
+		<article>
+			<div>
+			<h3><a href="@{Application.partner(p.id)}">${p.name.capitalize()}</a></h3>
+			</div>
+		</article>
+	#{/list}
+</section>
+	
+<section id="members">
+	<h2>Partenaires événementiels</h2>
+	#{list eventPartners, as : "p"}
+		<article>
+			<div>
+			<h3><a href="@{Application.eventPartner(p.id)}">${p.name.capitalize()}</a></h3>
+			</div>
+		</article>
+	#{/list}
+</section>
+
+

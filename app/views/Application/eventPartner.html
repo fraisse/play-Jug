@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Partenaire: ' + partner?.name /}
+
+#{if event}
+	#{include 'Application/_eventHeader.html' /}
+#{/if}
+<section id="main">
+	<nav>
+		<h2>Sponsorise</h2>
+		<ul>
+			#{list partner.getSponsoredEvents(partner.id), as : "event"}
+			<li>
+				<a href="@{Application.event(event.id)}">${event.title}</a>
+				<span class="date">${event.date.format('dd MMMM yyyy', 'fr')}</span>
+			</li>
+			#{/list}
+		</ul>
+	</nav>
+	<article>
+		<div>
+			<h2>${partner.name.capitalize()}</h2>
+			<p><a href="${partner.url}">${partner.url}</a></p>
+			<p>&nbsp;</p>
+			<p>
+			${partner.description.nl2br()}
+			</p>
+			<p>
+			<br><br>
+			</p>
+		</div>
+	</article>
+</section>
+
