@@ -25,11 +25,22 @@ GET		/partners/oldies						Application.oldPartners
 GET		/partner/{id}							Application.partner
 GET		/eventpartner/{id}						Application.eventPartner
 
-# API stuff
+# Deprecated API stuff
 GET		/api/events.{<json|xml>format}			API.listEvents
 GET		/api/members.{<json|xml>format}			API.listMembers
 GET		/api/nextevent.{<json|xml>format}		API.nextEvent
 GET		/api/news.{<json|xml>format}			API.listNews
+
+# API stuff
+GET		/api/def.json										API.definition
+GET		/api/events/all.{<json|xml>format}					API.listEvents
+GET		/api/events/next.{<json|xml>format}					API.nextEvent
+GET		/api/members/all.{<json|xml>format}					API.listMembers
+GET		/api/news/all.{<json|xml>format}					API.listNews
+GET		/api/partners/currentyear.{<json|xml>format}		API.currentYearPartners
+GET		/api/partners/pastyears.{<json|xml>format}			API.pastYearPartners
+GET		/api/partners/events.{<json|xml>format}				API.eventPartners
+
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
