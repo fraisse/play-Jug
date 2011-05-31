@@ -588,3 +588,44 @@ footer .credits {
 	color: red;
 	padding: 5px;
 }
+
+/* DISQUS CSS */
+/*#dsq-global-toolbar {
+    display: none !important;
+}
+*/
+
+/*#dsq-global-toolbar ol, ul, li {
+    list-style: none;
+}
+*/
+
+#disqus-comments ul li {
+	list-style: none;
+	list-style-type: none;
+	list-style-position: inside;
+}
+
+#dsq-subscribe a {
+	color : #444;
+}
+
+.dsq-subscribe-rss a {
+	color : #444;
+}
+
+.dsq-request-user-logout {
+	color : #444;
+}
+
+.dsq-request-user-name a {
+	color : #444;
+}
+
+.dsq-post-report {
+	color : #444;
+}
+
+.dsq-comment-footer-left a {
+	color : #444;
+}

@@ -50,7 +50,15 @@ public class Event extends Model {
     
     @ManyToOne
     public EventPartner partner;
-
+    
+    /**
+     * The current event is an old one?
+     * @return
+     */
+    public boolean old() {
+    	return date.before(new Date());
+    }
+    
     public static Event next() {
         return Event.find("date > ? order by date", new Date()).first();
     }
@@ -110,7 +118,6 @@ public class Event extends Model {
         count = count.valueOf(Participation.find("event.id = ? and status = ?", id, Participation.ParticipationStatus.Confirmed).fetch().size());
         return count;
     }
-
 
     @Override
     public String toString() {
