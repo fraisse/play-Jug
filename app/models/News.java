@@ -31,6 +31,11 @@ public class News extends Model {
 	public String content;
 	
 	/**
+	 * Display/Activate or not Disqus.com comments for this News
+	 */
+	public boolean comments;
+	
+	/**
 	 * get all news ordered by date
 	 * 
 	 * @return

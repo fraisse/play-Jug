@@ -143,16 +143,19 @@
      title: Next event annoucement
      date: 2010-03-01
      content: The next event is announced and will take place next monday. Subject is Maven vs Ivy.
+     comments: false
 
  News(news2):
           title: Website Update
           date: 2010-03-02
           content: The Website has just been updated!
+          comments: true
  
  News(news3):
       title: Long news
       date: 2010-03-03
       content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor mi, vestibulum eu volutpat et, placerat ac leo. Quisque felis quam, dignissim a commodo non, vehicula aliquam erat. Donec convallis fermentum mauris, sit amet fringilla lacus vehicula egestas. Cum sociis natoque penatibus et amet.
+      comments: true
          
  YearPartner(yp1):
      name: PlayApps
