@@ -12,6 +12,9 @@
 	</div>
 	<div id="presentation">
 		<h1><a href="@{Application.event(event.id)}">${event.title}</a></h1>
+		#{if event.partner}
+		<h2><a href="@{Application.eventPartner(event.partner.id)}">Cet événement est sponsorisé par ${event.partner.name}</a></h2>
+		#{/if}
 		<p>
 			${event.description}
 			<a href="@{Application.event(event.id)}">Plus d'informations</a>

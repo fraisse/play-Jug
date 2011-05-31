@@ -27,6 +27,13 @@
 		</ul>
 	</nav>
 	<article>
+		#{if event.partner}
+		<h2>Partenaire</h2>
+		<p>Cet événement est sponsorisé par <a href="@{Application.eventPartner(event.partner.id)}">${event.partner.name}</a>.</p>
+		#{if event.partner.logoURL}
+		<p align="center"><img src="${event.partner.logoURL}"/></p>
+		#{/if}
+		#{/if}
 		#{if event.report != null && !event.report.equals("")}
 			<h2>Compte rendu de la soirée</h2>
 			${event.report}

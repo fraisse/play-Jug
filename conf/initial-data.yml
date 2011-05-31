@@ -2,13 +2,13 @@
 # and then load them using Fixtures.load("initial-data.yml")
 
  EventPartner(ep1):
-     name: epartner1
-     url: http://epartner1.com
+     name: Foo
+     url: http://foo.com
      description: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
          
  EventPartner(ep2):
-    name: epartner2
-    url: http://eepartner.com
+    name: Bar
+    url: http://bar.com
     description: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
      
  Event(e0):
@@ -30,11 +30,13 @@
    title: Event Two
    description: Event Two default description
    date: 2012-01-01
+   partner: ep2
    
  Event(e3):
    title: Event Three
    description: Event Three default description
    date: 2013-01-01
+   partner: ep2
 
  Event(e4):
      title: Event Four
@@ -157,6 +159,7 @@
      startDate: 2011-03-01
      stopDate: 2012-03-01
      url: http://playapps.net
+     logoURL: http://www.playframework.org/public/images/playapps.png
      description: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
 
  YearPartner(yp2):
@@ -164,6 +167,7 @@
       startDate: 2011-04-01
       stopDate: 2012-04-01
       url: http://www.epitech.eu/ecole-informatique-montpellier-languedoc-roussillon/
+      logoURL: http://www.epitech.eu/images/design/logo-epitech.jpg
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere accumsan erat, vitae malesuada tortor fermentum eu. Morbi eu orci nunc, in sagittis urna. Aliquam erat volutpat. Sed gravida metus.
 
  YearPartner(yp3):

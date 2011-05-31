@@ -8,12 +8,18 @@ import models.EventPartner;
 import models.News;
 import models.Speaker;
 import models.YearPartner;
+import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
 import play.mvc.results.NotFound;
 
 @With(Filters.class)
 public class Application extends Controller {
+	
+	@Before
+	public static void addDefaults() {
+		renderArgs.put("yearpartners", YearPartner.getCurrent());
+	}
 
     public static void index() {
         Event event = Event.next();

@@ -25,6 +25,7 @@
 				</ul>
 			</nav>
 			#{doLayout /}
+			
 			<section id="partners">
 				<h2><a href="@{Application.partners()}">Partenaires</a></h2>
 				<div class="partners-register">
@@ -32,8 +33,9 @@
 					<p>Venez nous rencontrer lors d'un évènement ou envoyez nous un email.</p>
 				</div>
 				<ul class="partners-list">
-					<li><a href="http://www.playapps.net/" target="_blank"><img src="http://www.playframework.org/public/images/playapps.png" height="76" witdh="186" /></a></li>
-					<li><a href="http://www.epitech.eu/ecole-informatique-montpellier-languedoc-roussillon/" target="_blank"><img src="http://www.epitech.eu/images/design/logo-epitech.jpg"/></a></li>
+					#{list yearpartners, as : "partner"}
+					<li><a href="@{Application.partner(partner.id)}"><img src="${partner.logoURL}"/></a></li>
+					#{/list}
 				</ul>
 			</section>
 		</div>
