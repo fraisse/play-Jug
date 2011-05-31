@@ -6,14 +6,11 @@ package controllers;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.tools.javac.code.Type.ForAll;
-
 import models.Event;
 import models.EventPartner;
 import models.News;
 import models.Speaker;
 import models.YearPartner;
-import play.Play;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Router;
