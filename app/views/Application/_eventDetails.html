@@ -96,7 +96,9 @@
 		    var disqus_url = '@@{Application.event(event.id)}';
 		    var disqus_identifier = 'event-${event.id}';
 		    var disqus_shortname = 'jugmontpellier';
+		    #{if play.mode.isDev()}
 		    var disqus_developer = 1;
+		    #{/if}
 		  (function() {
 		   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';

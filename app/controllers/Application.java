@@ -11,7 +11,6 @@ import models.YearPartner;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
-import play.mvc.results.NotFound;
 
 @With(Filters.class)
 public class Application extends Controller {
