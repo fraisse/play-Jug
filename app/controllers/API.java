@@ -93,7 +93,12 @@ public class API extends Controller {
 		// TODO :: XML
 		// render(news);
 	}
-
+	
+	/**
+	 * TODO : Must be used for all JSON renderings since we want to use specific formats.
+	 * 
+	 * @param o
+	 */
 	private static void renderJSONExclusion(Object o) {
 		throw new RenderJsonExclusion(o);
 	}
