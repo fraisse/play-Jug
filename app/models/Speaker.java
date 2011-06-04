@@ -68,6 +68,17 @@ public class Speaker extends Model {
     	}
     }
 
+    public String getPhotoUrl() {
+    	if (photoUrl != null && photoUrl.trim().length() > 0) {
+    		return photoUrl;
+    	}
+    	return getGravatar();
+    }
+    
+    public void setPhotoUrl(String newPhotoUrl) {
+    	photoUrl = newPhotoUrl;
+    }
+    
     @Override
     public String toString() {
         return fullName;

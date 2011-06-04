@@ -8,12 +8,7 @@
 		<url>${member.url}</url>
 		<personalUrl>${member.personalUrl}</personalUrl>
 		<description>${member.description?.escapeXml()}</description>
-		#{if (member.photoUrl)}
-		<photoUrl>${member.photoUrl}</photoUrl>
-		#{/if}
-		#{else}
-		<photoUrl>${member.getGravatar().escapeXml()}</photoUrl>
-		#{/else}
+		<photoUrl>${member.photoUrl.escapeXml()}</photoUrl>
 	</member>
 	#{/list}
 </members>

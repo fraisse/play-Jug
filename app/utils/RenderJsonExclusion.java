@@ -17,6 +17,7 @@ public class RenderJsonExclusion extends RenderJson {
 				registerTypeAdapter(Timestamp.class, new DateTypeAdapter()).
 				registerTypeAdapter(Date.class, new DateTypeAdapter()).
 				registerTypeAdapter(java.sql.Date.class, new DateTypeAdapter()).
+				serializeNulls().
 				create().toJson(o)); 
 	}
 
