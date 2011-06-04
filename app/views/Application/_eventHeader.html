@@ -2,12 +2,21 @@
 	<div id="speakers">
 		<h2>Speakers</h2>
 		#{list event.speakers(), as : "speaker"}
+		    #{if speaker}
+		    <table cellpadding="4" cellspacing="10"><tr>
+		    <td>
+		      <img width="50px" height="50px" src='${speaker.photoUrl}'/>
+		    </td>
+		    <td>
 			<dl>
 				<dt><a href="@{Application.member(speaker.id)}">${speaker.fullName}</a></dt>
 				<dd>${speaker.activity}</dd>
 				<dd>${speaker.company}</dd>
 				<dd><a href="${speaker.url}" target="blank">${speaker.url}</a></dd>
 			</dl>
+			</td>
+			</tr></table>
+			#{/if}
 		#{/list}
 	</div>
 	<div id="presentation">

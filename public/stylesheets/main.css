@@ -21,7 +21,7 @@ time, mark, audio, video {
 	outline: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+/*	vertical-align: baseline; */
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -187,6 +187,10 @@ header {
 	border-bottom: 1px solid #8c1e01;
 	margin: 5px -10px;
 }
+#speakers dl {
+	padding-left: 10px;
+}
+
 #speakers dt {
 	color: #fff;
 	text-shadow: 1px 1px 0 rgba(0,0,0,.3);

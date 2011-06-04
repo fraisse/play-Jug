@@ -28,8 +28,8 @@
 
  Event(e2):
    title: Event Two
-   description: Event Two default description
-   date: 2012-01-01
+   description: Soirée Android
+   date: 2011-06-22
    partner: ep2
    
  Event(e3):
@@ -95,6 +95,17 @@
        jugmember: true
        memberFct: Vice-Secrétaire
        email: chamerling.ebmws@gmail.com
+
+ Speaker(speak5):
+       fullName: Eric Taix
+       activity: Responsable R&D
+       company: ESII Média-Accueil
+       url: http://www.esii.com
+       personalUrl: github.com/eric-taix
+       jugmember: true
+       memberFct: Secrétaire
+       email: eric.taix@gmail.com
+       description: Eric Taix est aujourd'hui responsable du développement chez ESII Média Accueil et un expert J2EE. Ses 20 ans d'expérience auprès d'éditeurs, de sociétés de service (FiSystem, Cap Gemini) et de startup lui ont donné de solides compétences dans le développement logiciel et la plateforme Java. Passionné de technologie, il croit fermement dans la communauté Java, le partage des connaissances ainsi qu'à l'expertise des équipes. Il participe d'ailleurs activement à des projets open-source du monde Java et Android.
        
  Tag(tag1):
     name: gwt
@@ -107,6 +118,12 @@
 
  Tag(tag4):
     name: git
+
+ Tag(tag5):
+    name: android
+
+ Tag(tag6):
+    name: gae
 
  Talk(talk1):
    title: Introduction
@@ -121,23 +138,33 @@
    speaker: speak2
    teaser: Introduction de la soirée
    event: e0
-
- Talk(talk3):
+      
+ Talk(talk5):
    title: Introduction
    time: "19:00"
    speaker: speak1
    teaser: Introduction de la soirée
    event: e2
-   
- Talk(talk4):
-     title: Maven3
-     time: "19:30"
-     speaker: speak3
-     teaser: Maven3 vs Maven2... so what?
-     event: e2
-     tags:
-         - tag2
-         - tag3
+
+ Talk(talk6):
+   title: Android - Principes généraux
+   time: "19:15"
+   speaker: speak5
+   teaser: Présentation d'Android et des principes fondamentaux de la plateforme
+   event: e2
+
+ Talk(talk7):
+   title: Pause
+   time: "19:45"
+   teaser: Pause
+   event: e2
+
+ Talk(talk8):
+   title: Android - Plus loin, plus vite et mieux
+   time: "20:00"
+   speaker: speak5
+   teaser: Comment améliorer sa productivité sous Android
+   event: e2
          
  News(news1):
      title: Next event annoucement
