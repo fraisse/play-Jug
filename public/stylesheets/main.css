@@ -425,10 +425,12 @@ article h3 {
 
 #main article a {
 	color: #4A738C;
+	font-weight: bold;
 }
 
 #main article a:hover {
 	color: #4A738C;
+	font-weight: bold;
 }
 /*  -------------------------------- PARTNERS */
 #partners {
