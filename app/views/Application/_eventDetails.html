@@ -49,7 +49,7 @@
 			#{/if}
 			</p>
 			#{if talk.speaker}
-			<p>Présenté par <span class="speaker">${talk.speaker.fullName}</span></p>
+			<p>Présenté par <a href="@{Application.member(talk.speaker.id)}">${talk.speaker.fullName}</a></p>
 			#{/if}
 			<p>${talk.teaser}</p>
 		#{/list}
