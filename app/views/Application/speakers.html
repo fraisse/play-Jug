@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Membres' /}
+
+#{if event}
+	#{include 'Application/_eventHeader.html' /}
+#{/if}
+<section id="speakerstopbox">
+	<h2>Intervenir?</h2>
+	<p>Vous voulez proposer un sujet, faire une présentation d'une technologie que vous maitrisez et partager votre expérience avec une communauté ouverte? N'hésitez pas à nous contacter!</p>
+</section>
+<section id="members">
+	<h2>&{'speakers.title'}</h2>
+	#{list speakers, as : "speaker"}
+		<article>
+			<div class="member-photo">
+			#{if (speaker.photoUrl)}
+				<img alt="${speaker.fullName}" src="${speaker.photoUrl}">
+			#{/if}#{else}
+				<img alt="${speaker.fullName}" src="${speaker.getGravatar()}">
+			#{/else}
+			</div>
+			<div>
+			<h3><a href="@{Application.member(speaker.id)}">${speaker.fullName}</a></h3>
+			#{if (speaker.url)}
+				<span><a href="${speaker.url}" target="_blank">${speaker.company}</a></span><br />
+			#{/if}#{else}
+				<span>${speaker.company}</span><br />
+			#{/else}
+			${speaker.activity.nl2br()}
+			</div>
+		</article>
+	#{/list}
+</section>

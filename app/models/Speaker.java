@@ -53,6 +53,16 @@ public class Speaker extends Model {
                 speakerId).fetch();
     }
     
+    /**
+     * Get all the speakers who gave or will give a talk
+     * @return
+     */
+    public static List<Speaker> getSpeakers() {
+		return Speaker
+				.find("select distinct talk.speaker as s from Talk talk")
+				.fetch();
+    }
+    
     public String getGravatar() {
 		String defaultLogo = "";
 		try {

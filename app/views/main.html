@@ -21,7 +21,7 @@
 					#{if nextEventId}<li ${request.actionMethod == 'event' ? 'class=active' : ''}><a href="@{Application.event(nextEventId)}">Events</a></li>#{/if}
 <!--					<li><a href="#">Publications</a></li>-->
 					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">A propos</a></li>
-					<li ${request.actionMethod == 'members' ? 'class=active' : ''}><a href="@{Application.members()}">&{'navigation.members'}</a></li>
+					<li ${request.actionMethod.startsWith('member') ? 'class=active' : ''}><a href="@{Application.members()}">&{'navigation.members'}</a></li>
 				</ul>
 			</nav>
 			#{doLayout /}
@@ -52,7 +52,7 @@
 				<h2>Participez!</h2>
 				<p>Chaque participant est encouragé à promouvoir les évènements via des gazoullis, courriels ou tout autre moyen de communication.</p>
 				<p>Les thématiques sont ouvertes à proposition, si vous souhaitez que le JUG intervienne sur un sujet en particulier, faites-le nous savoir en envoyant un courriel.</p>
-				<p>Enfin, si vous avez une expérience sur un sujet spécifique, et que vous souhaitez la partager, nous sommes en perpétuelle recherche de nouveaux speakers.</p>
+				<p>Enfin, si vous avez une expérience sur un sujet spécifique, et que vous souhaitez la partager, nous sommes en perpétuelle recherche de nouveaux <a href="@{Application.speakers()}">speakers</a>.</p>
 				<p><a id="contact" href="mailto:info@jug-montpellier.org">info@jug-montpellier.org</a></p>
 			</div>
 			<div>

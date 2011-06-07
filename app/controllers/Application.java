@@ -137,5 +137,15 @@ public class Application extends Controller {
     	render(partner);
     }
     
+    public static void speakers() {
+    	List<Speaker> speakers = Speaker.getSpeakers();
+        if (renderArgs.get("nextEventId") != null) {
+            Event event = Event.findById(renderArgs.get("nextEventId"));
+            render(speakers, event);
+        } else {
+            render(speakers);
+        }
+    }
+    
     
 }
