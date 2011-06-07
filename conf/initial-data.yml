@@ -95,13 +95,14 @@
        jugmember: true
        memberFct: Vice-Secrétaire
        email: chamerling.ebmws@gmail.com
+       description: Christophe Hamerling est Ingénieur de Recherche et Développement sur les Architectures Orientées Services chez PetalsLink, éditeur de solutions Open source Français et membre actif du consortium OW2 (http://ow2.org). Christophe travaille actuellement sur des projets de recherche Européens et Français tels que SOA4All (http://soa4all.eu) et Play (http://play-project.eu/) en tant que développeur et architecte de l'infrastructure SOA largement distribuée. Christophe s'intéresse aujourd'hui particulièrement aux aspects Cloud Computing dont il leade l'activité au sein de PetalsLink; son challenge étant de proposer une solution SOA Open source innovante pour le Cloud. Mis à part son implication dans le consortium OW2 en tant que commiter sur de nombreux projets et membre du comité technique, Christophe partage aussi sa vie technologique sur http://chamerling.org et sur http://twitter.com/chamerling.
 
  Speaker(speak5):
        fullName: Eric Taix
        activity: Responsable R&D
        company: ESII Média-Accueil
        url: http://www.esii.com
-       personalUrl: github.com/eric-taix
+       personalUrl: http://github.com/eric-taix
        jugmember: true
        memberFct: Secrétaire
        email: eric.taix@gmail.com
