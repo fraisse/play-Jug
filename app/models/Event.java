@@ -98,7 +98,7 @@ public class Event extends Model {
 
     public Long particitationValidated(){
         Long count = new Long(0L);
-        count = count.valueOf(Participation.find("event.id = ? and status = ?", id, Participation.ParticipationStatus.Confirmed).fetch().size());
+        count = count.valueOf(Participation.find("event.id = ?", id).fetch().size());
         return count;
     }
 
