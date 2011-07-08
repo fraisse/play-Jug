@@ -1,4 +1,5 @@
 target/
+modules/
 
 #Eclipse
 .project
@@ -15,3 +16,4 @@ tmp/**/*
 .classpath
 .settings/
 .loadpath
+
