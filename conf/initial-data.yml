@@ -208,4 +208,19 @@
       url: http://partner3.com
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla lobortis ligula nec commodo. Phasellus vel sapien odio. Aliquam bibendum, ante consectetur luctus ornare, nulla libero scelerisque lacus, venenatis luctus elit orci vel mauris. Nullam sit amet sapien mauris. Suspendisse nullam.
  
-     
+ YearPartner(yp4):
+      name: Esii
+      startDate: 2011-04-01
+      stopDate: 2012-04-01
+      url: http://www.esii.com
+      logoURL: /public/images/sponsoring/Esii-logo.png
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere accumsan erat, vitae malesuada tortor fermentum eu. Morbi eu orci nunc, in sagittis urna. Aliquam erat volutpat. Sed gravida metus.
+
+ YearPartner(yp5):
+      name: Oxiane
+      startDate: 2011-04-01
+      stopDate: 2012-04-01
+      url: http://www.oxiane.com
+      logoURL: /public/images/sponsoring/Oxiane-mediterranee-logo_01.jpg
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere accumsan erat, vitae malesuada tortor fermentum eu. Morbi eu orci nunc, in sagittis urna. Aliquam erat volutpat. Sed gravida metus.
+    

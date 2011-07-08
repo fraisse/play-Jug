@@ -11,9 +11,11 @@
 	<article>
 		<div>
 			<h2>${partner.name.capitalize()}</h2>
-			<p><a href="${partner.url}">${partner.url}</a></p>
+			<p><a href="${partner.url}" target="_blank">${partner.url}</a></p>
 			<p>&nbsp;</p>
-			#{if partner.logoURL}<p align="center"><img src="${partner.logoURL}"/></p>#{/if}
+			#{if partner.logoURL}
+			    <p align="center"><img style="max-width: 275px; max-height:100px;" src="${partner.logoURL}"/></p>
+			#{/if}
 			<p>${partner.description.nl2br()}</p>
 		</div>
 	</article>
