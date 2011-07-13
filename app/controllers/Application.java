@@ -11,6 +11,7 @@ import models.YearPartner;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
+import utils.Textile;
 
 @With(Filters.class)
 public class Application extends Controller {
@@ -31,6 +32,9 @@ public class Application extends Controller {
     public static void event(Long id) {
         Event event = Event.findById(id);
         String[] attachments = Event.attachments(id);
+        if (event != null && event.description != null){
+        	event.description = Textile.toHTML(event.description);
+        }
         render(event, attachments);
     }
 
@@ -60,6 +64,9 @@ public class Application extends Controller {
     public static void member(Long id) {
         Speaker member = Speaker.findById(id);
         List<Event> memberEvent = Speaker.getSpeakerEvents(id);
+        if (member != null && member.description != null){
+        	member.description = Textile.toHTML(member.description);
+        }
         if (renderArgs.get("nextEventId") != null) {
             Event event = Event.findById(renderArgs.get("nextEventId"));
             render(member, memberEvent, event);

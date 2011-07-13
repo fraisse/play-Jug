@@ -71,6 +71,11 @@
    url: http://www.zenexity.com
    jugmember: true
    memberFct: Président
+   description: |
+                 h4. Test titre textile
+                 
+                 * premier item
+                 ** sous item
 
  Speaker(speak2):
    fullName: Blip
