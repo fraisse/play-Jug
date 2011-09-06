@@ -50,6 +50,22 @@
         url varchar(255),
         primary key (id)
     );
+    
+    create table Poll (
+        id bigint not null auto_increment,
+        question longtext not null,
+        expiryDate datetime,
+        visible boolean,
+        primary key (id)
+    );
+
+    create table Answer (
+        id bigint not null auto_increment,
+        answer varchar(255) not null,
+        votes bigint,
+        poll_id bigint not null,
+        primary key (id)
+    );
 
     alter table Event
         add constraint FK403827AA33E91E4
@@ -66,6 +82,11 @@
         foreign key (Talk_id)
         references Talk (id);
 
+    alter table Answer
+        add constraint Poll_Answer
+        foreign key (poll_id)
+        references Poll (id);
+
 # --- !Downs
 
     alter table Event
@@ -79,6 +100,10 @@
     alter table Talk_Tag
         drop
         foreign key FKDF7AD987F3D5575E;
+
+    alter table Answer
+        drop
+        foreign key Poll_Answer;
 
     alter table Event drop column partner_id;
 
@@ -98,3 +123,6 @@
 
     drop table if exists YearPartner;
 
+    drop table if exists Poll;
+
+    drop table if exists Answer;

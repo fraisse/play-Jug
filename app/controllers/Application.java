@@ -3,9 +3,11 @@ package controllers;
 import java.io.File;
 import java.util.List;
 
+import java.util.Set;
 import models.Event;
 import models.EventPartner;
 import models.News;
+import models.Poll;
 import models.Speaker;
 import models.YearPartner;
 import play.mvc.Before;
@@ -15,12 +17,12 @@ import utils.Textile;
 
 @With(Filters.class)
 public class Application extends Controller {
-	
-	@Before
-	public static void addDefaults() {
-		renderArgs.put("yearpartners", YearPartner.getCurrent());
-	}
-
+    
+    @Before
+    public static void addDefaults() {
+        renderArgs.put("yearpartners", YearPartner.getCurrent());
+    }
+    
     public static void index() {
         Event event = Event.next();
         if (event == null) {
@@ -28,16 +30,16 @@ public class Application extends Controller {
         }
         render(event);
     }
-
+    
     public static void event(Long id) {
         Event event = Event.findById(id);
         String[] attachments = Event.attachments(id);
         if (event != null && event.description != null){
-        	event.description = Textile.toHTML(event.description);
+            event.description = Textile.toHTML(event.description);
         }
         render(event, attachments);
     }
-
+    
     public static void about() {
         if (renderArgs.get("nextEventId") != null) {
             Event event = Event.findById(renderArgs.get("nextEventId"));
@@ -46,11 +48,11 @@ public class Application extends Controller {
             render();
         }
     }
-
+    
     public static void view() {
         render();
     }
-
+    
     public static void members() {
         List<Speaker> members = Speaker.getMembers();
         if (renderArgs.get("nextEventId") != null) {
@@ -60,12 +62,12 @@ public class Application extends Controller {
             render(members);
         }
     }
-
+    
     public static void member(Long id) {
         Speaker member = Speaker.findById(id);
         List<Event> memberEvent = Speaker.getSpeakerEvents(id);
         if (member != null && member.description != null){
-        	member.description = Textile.toHTML(member.description);
+            member.description = Textile.toHTML(member.description);
         }
         if (renderArgs.get("nextEventId") != null) {
             Event event = Event.findById(renderArgs.get("nextEventId"));
@@ -86,18 +88,18 @@ public class Application extends Controller {
     
     /**
      * List all the talks tagged with the given tag name
-     * 
+     *
      * @param tag
      */
     public static void listTagged(String tag) {
-    	// TODO
-    	index();
+        // TODO
+        index();
     }
-
+    
     /* News Section */
     
     public static void news() {
-    	List<News> news = News.allByDate();
+        List<News> news = News.allByDate();
         if (renderArgs.get("nextEventId") != null) {
             Event event = Event.findById(renderArgs.get("nextEventId"));
             render(news, event);
@@ -106,46 +108,46 @@ public class Application extends Controller {
         }
     }
     
-	public static void newsDetail(Long id) {
-		News news = News.findById(id);
-		if (renderArgs.get("nextEventId") != null) {
-			Event event = Event.findById(renderArgs.get("nextEventId"));
-			render(news, event);
-		} else {
-			render(news);
-		}
-	}
+    public static void newsDetail(Long id) {
+        News news = News.findById(id);
+        if (renderArgs.get("nextEventId") != null) {
+            Event event = Event.findById(renderArgs.get("nextEventId"));
+            render(news, event);
+        } else {
+            render(news);
+        }
+    }
     
     public static void newsFeed() {
-    	request.format = "rss";
-    	List<News> news = News.allByDate();
-    	response.setContentTypeIfNotSet("application/rss+xml");
-    	render(news);
+        request.format = "rss";
+        List<News> news = News.allByDate();
+        response.setContentTypeIfNotSet("application/rss+xml");
+        render(news);
     }
     
     public static void partners() {
-    	List<YearPartner> partners = YearPartner.getCurrent();
-    	List<EventPartner> eventPartners = EventPartner.all().fetch();
-    	render(partners, eventPartners);
+        List<YearPartner> partners = YearPartner.getCurrent();
+        List<EventPartner> eventPartners = EventPartner.all().fetch();
+        render(partners, eventPartners);
     }
     
     public static void partner(Long id) {
-    	YearPartner partner = YearPartner.findById(id);
-    	render(partner);
+        YearPartner partner = YearPartner.findById(id);
+        render(partner);
     }
     
     public static void oldPartners() {
-    	List<YearPartner> partners = YearPartner.getOldies();
-    	render(partners);
+        List<YearPartner> partners = YearPartner.getOldies();
+        render(partners);
     }
     
     public static void eventPartner(Long id) {
-    	EventPartner partner = EventPartner.findById(id);
-    	render(partner);
+        EventPartner partner = EventPartner.findById(id);
+        render(partner);
     }
     
     public static void speakers() {
-    	List<Speaker> speakers = Speaker.getSpeakers();
+        List<Speaker> speakers = Speaker.getSpeakers();
         if (renderArgs.get("nextEventId") != null) {
             Event event = Event.findById(renderArgs.get("nextEventId"));
             render(speakers, event);
@@ -154,5 +156,16 @@ public class Application extends Controller {
         }
     }
     
+    
+    public static void polls() {
+        List<Poll> polls = Poll.getVisibles();
+        Set<Long> closedPolls = Poll.closedPolls(request.cookies.get("polls"));
+        if (renderArgs.get("nextEventId") != null) {
+            Event event = Event.findById(renderArgs.get("nextEventId"));
+            render(event, polls, closedPolls);
+        } else {
+            render(polls, closedPolls);
+        }
+    }
     
 }

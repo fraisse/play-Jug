@@ -25,6 +25,7 @@ GET		/partners/oldies						Application.oldPartners
 GET		/partner/{id}							Application.partner
 GET		/eventpartner/{id}						Application.eventPartner
 GET		/speakers								Application.speakers
+GET		/polls								Application.polls
 
 # Deprecated API stuff
 GET		/api/events.{<json|xml>format}			API.listEvents

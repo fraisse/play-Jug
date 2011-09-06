@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+#{set title:'Sondages' /}
+
+#{if event}
+#{include 'Application/_eventHeader.html' /}
+#{/if}
+
+<section id="members">
+    <h2>&{'navigation.polls'}</h2>
+    #{list items: polls, as: 'poll'}
+    <article>
+        <div>
+            %{ type = closedPolls.contains(poll.id) ? 'ro' : 'rw' }%
+            #{poll poll: poll, as: type /}
+        </div>
+    </article>
+    #{/list}
+</section>

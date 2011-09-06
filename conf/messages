@@ -12,6 +12,7 @@ navigation.home = Accueil
 navigation.about = A propos
 navigation.event = Événements
 navigation.members = Membres
+navigation.polls = Sondages
 
 title.jug = MONTPELLIER JUG
 title.about = A propos du Montpellier JUG
@@ -49,3 +50,6 @@ remove.success=Fichier %s correctement supprimé.
 # Speakers
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 speakers.title=Ils sont intervenus au JUG
+
+poll.error=Vous devez sélectionner une réponse.
+send=Soumettre

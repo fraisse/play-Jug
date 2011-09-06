@@ -229,3 +229,66 @@
       logoURL: /public/images/sponsoring/Oxiane-mediterranee-logo_01.jpg
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere accumsan erat, vitae malesuada tortor fermentum eu. Morbi eu orci nunc, in sagittis urna. Aliquam erat volutpat. Sed gravida metus.
     
+ Poll(p1):
+      question: Quel framework vous intéresse le plus ?
+      expiryDate: 2011-12-25
+      visible: true
+
+ Poll(p2):
+      question: Quel langage vous intéresse le plus ?
+      expiryDate: 2011-12-25
+
+ Poll(p3):
+      question: Quelle mascotte préférez-vous ?
+      expiryDate: 2010-12-25
+      visible: true
+
+ Answer(a1):
+      poll: p1
+      answer: Lift
+      votes: 5
+      
+ Answer(a2):
+      poll: p1
+      answer: Play
+      votes: 3
+      
+ Answer(a3):
+      poll: p1
+      answer: Scalatra
+      votes: 2
+      
+ Answer(a4):
+      poll: p2
+      answer: Scala
+      votes: 10
+      
+ Answer(a5):
+      poll: p2
+      answer: Java
+      votes: 5
+      
+ Answer(a6):
+      poll: p2
+      answer: Clojure
+      votes: 1
+
+ Answer(a7):
+      poll: p3
+      answer: Tux
+      votes: 2
+      
+ Answer(a8):
+      poll: p3
+      answer: Duke
+      votes: 10
+      
+ Answer(a9):
+      poll: p3
+      answer: Puffy
+      votes: 5
+      
+ Answer(a10):
+      poll: p3
+      answer: Sakila
+      votes: 1

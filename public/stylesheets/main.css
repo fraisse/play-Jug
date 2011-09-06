@@ -708,3 +708,15 @@ footer .credits {
 .dsq-comment-footer-left a {
 	color : #444;
 }
+
+.poll-form {
+    width: 500px;
+}
+
+.hide {
+    display: none;
+}
+
+#poll-container h2 {
+    color: white;
+}

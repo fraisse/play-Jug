@@ -22,6 +22,7 @@
 <!--					<li><a href="#">Publications</a></li>-->
 					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">A propos</a></li>
 					<li ${request.actionMethod.startsWith('member') ? 'class=active' : ''}><a href="@{Application.members()}">&{'navigation.members'}</a></li>
+                                        <li ${request.actionMethod.startsWith('polls') ? 'class=active' : ''}><a href="@{Application.polls()}">&{'navigation.polls'}</a></li>
 				</ul>
 			</nav>
 			#{doLayout /}
