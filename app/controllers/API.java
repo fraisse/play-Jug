@@ -45,9 +45,11 @@ public class API extends Controller {
 
 	public static void listMembers() {
 		List<Speaker> members = Speaker.getMembers();
-//		if (request.format.equals("json")) {
-//			renderJSONExclusion(members);
-//		}
+		render(members);
+	}
+
+	public static void listSpeakers() {
+		List<Speaker> members = Speaker.getSpeakers();
 		render(members);
 	}
 
